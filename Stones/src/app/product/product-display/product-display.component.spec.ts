@@ -22,4 +22,21 @@ describe('ProductDisplayComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('raisePrice() should raise price', () => {
+    const oldVal = component.product.price;
+
+    component.raisePrice();
+
+    expect(oldVal).toBeLessThan(component.product.price);
+  });
+
+  it('button should raise Price on Click', () => {
+    const oldVal = component.product.price;
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+
+    button.click();
+
+    expect(oldVal).toBeLessThan(component.product.price);
+  });
 });
