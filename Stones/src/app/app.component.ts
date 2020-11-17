@@ -9,9 +9,13 @@ import { Product } from './product/product';
 export class AppComponent {
   title = 'Stones';
 
-  public productParent = new Product(1, 'Stein', 12, 32);
+  public productParent = new Product(12, 'Granitstein Gravo', 134.56, 12);
 
   public onPriceChanged(price: number): void {
     alert('Neuer Preis: ' + price);
+  }
+
+  public changePrice(price: number): void {
+    this.productParent.price = Number(price);
   }
 }
