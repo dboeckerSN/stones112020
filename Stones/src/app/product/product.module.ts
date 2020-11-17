@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatCardModule} from '@angular/material/card';
 
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductDisplayComponent } from './product-display/product-display.component';
+import { UtilsModule } from '../utils/utils.module';
 
 
 @NgModule({
   declarations: [ProductDisplayComponent],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    UtilsModule,
+    MatCardModule,
   ],
   exports: [ProductDisplayComponent]
 })

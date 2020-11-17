@@ -1,14 +1,15 @@
-<div class="product"
-  [ngStyle]="styleConfig"
-  [ngClass]="{'border-green' : product.price < 50}">
+<mat-card>
   <ul>
     <li>Id: {{ product.id }}</li>
     <li class="nameAttribute">Name: {{ product.name }}</li>
-    <li>Preis: {{ product.price }}</li>
+    <li>{{product.price | currency: "EUR": 'code'}}</li>
+    <li>{{product.price | netto: 16: "netto" | currency: "EUR"}}</li>
+    <li>{{product.price | netto | currency: "EUR"}}</li>
+    <li>{{product.price | netto: 16: "brutto" | currency: "EUR"}}</li>
     <li *ngIf="showWeight">Gewicht: {{ product.weight }}</li>
   </ul>
   <ng-content></ng-content>
   <button (click)="raisePrice()">Preiserhöhung</button>
   <button (click)="lowerPrice()">Preisreduzierung</button><br>
   <button (click)="toggleWeight()">Gewicht ein- bzw.ausblenden</button>
-</div>
+</mat-card>
