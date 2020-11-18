@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductDisplayComponent } from './product-display/product-display.component';
@@ -21,6 +22,7 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     ReactiveFormsModule,
     MatCardModule,
+    HttpClientModule,
   ],
   exports: [ProductDisplayComponent, ProductFormComponent]
 })

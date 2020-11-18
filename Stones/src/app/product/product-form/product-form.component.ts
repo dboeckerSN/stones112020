@@ -27,7 +27,10 @@ export class ProductFormComponent implements OnInit {
   }
 
   public save(): void {
-    this.productService.newProduct({id: 1 , ...this.productForm.value});
+    this.productService.newProduct(this.productForm.value).subscribe(
+      () => alert('Produkt gespeichert'),
+      (error) => alert('Fehler!!!' + error.status),
+    );
     /*
     this.saveProduct.emit({
       id: 1,
