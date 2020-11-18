@@ -2,7 +2,7 @@
   background-color: grey;
 }
 
-div {
-  width: 200px;
+mat-card {
+  width: 250px;
   margin-bottom: 5px;
 }

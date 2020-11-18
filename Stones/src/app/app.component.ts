@@ -58,4 +58,8 @@ export class AppComponent {
   public onPriceChanged(price: number): void {
     alert('Neuer Preis: ' + price);
   }
+
+  public onSaveProduct(product: Product): void {
+    this.products.unshift(product);
+  }
 }

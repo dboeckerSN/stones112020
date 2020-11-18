@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { By } from '@angular/platform-browser';
 import { NettoPipe } from 'src/app/utils/netto.pipe';
 import { Product } from '../product';
@@ -11,7 +13,7 @@ describe('ProductDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductDisplayComponent, NettoPipe ]
+      declarations: [ ProductDisplayComponent, NettoPipe ],
     })
     .compileComponents();
   });
