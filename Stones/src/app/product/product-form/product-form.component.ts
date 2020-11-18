@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from '../custom-validators';
 import { Product } from '../product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'stn-product-form',
@@ -9,7 +10,7 @@ import { Product } from '../product';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-  @Output() saveProduct = new EventEmitter<Product>();
+  public nameLength = 0;
 
   public productForm = new FormGroup({
     name: new FormControl('', [Validators.required, CustomValidators.alphaNum]),
@@ -17,13 +18,16 @@ export class ProductFormComponent implements OnInit {
     weight: new FormControl(),
   });
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productForm.get('name').valueChanges.subscribe(
+      data => this.nameLength = data.length,
+    );
   }
 
   public save(): void {
-    this.saveProduct.emit({id: 1 , ...this.productForm.value});
+    this.productService.newProduct({id: 1 , ...this.productForm.value});
     /*
     this.saveProduct.emit({
       id: 1,
