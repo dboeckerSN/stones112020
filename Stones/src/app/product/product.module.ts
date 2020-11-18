@@ -8,9 +8,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { ProductFormComponent } from './product-form/product-form.component';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductListComponent } from './product-list/product-list.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [ProductDisplayComponent, ProductFormComponent],
+  declarations: [ProductDisplayComponent, ProductFormComponent, ProductListComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,
@@ -18,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatCardModule,
   ],
   exports: [ProductDisplayComponent, ProductFormComponent]
 })
